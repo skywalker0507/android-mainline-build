@@ -1,18 +1,16 @@
 name: build-rb5-kernel
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  repository_dispatch:
+    types: [external-commit]
 
 jobs:
-  build:
-
+  run-on-external-commit:
+  
     runs-on: ubuntu-20.04
-
+    
     steps:
-
+    
     - name: Free Disk Space (Ubuntu)
       uses: jlumbroso/free-disk-space@main
       with:
