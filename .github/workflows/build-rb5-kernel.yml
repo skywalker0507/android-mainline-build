@@ -1,11 +1,10 @@
 name: build-rb5-kernel
 
 on:
-  repository_dispatch:
-    types: [external-commit]
+  workflow_dispatch:
 
 jobs:
-  run-on-external-commit:
+  build:
   
     runs-on: ubuntu-20.04
     
