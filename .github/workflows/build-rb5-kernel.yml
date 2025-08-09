@@ -38,7 +38,7 @@ jobs:
         curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
         chmod a+x ~/bin/repo
         repo init -u https://github.com/skywalker0507/android-mainline-build/ -b main --depth 1
-        repo sync
+        repo sync --no-tags -j2
         tools/bazel clean
         tools/bazel run //common:db845c_dist
 
